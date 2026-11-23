@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Danica's Cleaning Service | Residential and Commercial Cleaning, Sherwood Park and Edmonton</title>
+<meta name="description" content="Residential and commercial cleaning across Edmonton, Sherwood Park, St. Albert, Spruce Grove, Fort Saskatchewan, Beaumont and Ardrossan. Fully insured with WCB. Call (780) 218-8529.">
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Great+Vibes&display=swap" rel="stylesheet">
+<style>
+:root{
+  --violet:#5E449C; --violet-deep:#3B2A68; --night:#241843; --mauve:#A46496; --mauve-soft:#D9B9D3;
+  --bg:#FBF8FC; --bg-alt:#F1E9F5; --surface:#FFFFFF; --text:#2A1B45; --muted:#6A5C80; --line:#E2D6EA;
+  --on-dark:#F6F0FA; --on-dark-muted:#C9BBDD;
+  --display:"Bricolage Grotesque", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+  --script:"Great Vibes", "Snell Roundhand", "Brush Script MT", cursive;
+  color-scheme:light;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#1B1430; --bg-alt:#221a3b; --surface:#2A2148; --text:#F3ECF9; --muted:#BFB1D4; --line:#3C3160;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{--bg:#1B1430; --bg-alt:#221a3b; --surface:#2A2148; --text:#F3ECF9; --muted:#BFB1D4; --line:#3C3160; color-scheme:dark;}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth; scroll-padding-top:calc(env(safe-area-inset-top,0px) + 96px)}
+body{margin:0; background:var(--bg); color:var(--text); font-family:var(--display); font-size:1.0625rem; line-height:1.6; font-optical-sizing:auto; -webkit-font-smoothing:antialiased}
+img{max-width:100%; display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--mauve); outline-offset:3px; border-radius:6px}
+.wrap{width:min(1180px, 100% - 2.5rem); margin-inline:auto}
+h1,h2,h3{font-weight:700; line-height:1.05; letter-spacing:-0.025em; margin:0}
+h2{font-size:clamp(2.1rem, 4.4vw, 3.4rem)}
+h3{font-size:1.35rem; letter-spacing:-0.01em}
+p{margin:0 0 1rem}
+.lede{font-size:1.2rem; color:var(--muted); max-width:58ch}
+.btn{display:inline-flex; align-items:center; gap:.6rem; padding:.95rem 1.5rem; border-radius:999px; font-weight:650; text-decoration:none; font-size:1rem; border:2px solid transparent; transition:transform .2s ease, background .2s ease}
+.btn:hover{transform:translateY(-2px)}
+.btn-solid{background:var(--violet); color:#fff}
+.btn-solid:hover{background:var(--violet-deep)}
+.btn-ghost{border-color:currentColor; color:var(--text)}
+.btn svg{width:18px; height:18px; flex:none}
+.spark{fill:var(--mauve)}
+
+/* ribbon + header */
+.ribbon{background:var(--night); color:var(--on-dark); font-size:.92rem; text-align:center; padding:.55rem 1rem}
+.ribbon a{color:var(--mauve-soft); font-weight:650; margin-left:.4rem}
+header.site{position:sticky; top:0; z-index:40; background:color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); border-bottom:1px solid var(--line)}
+body::before{content:""; position:fixed; inset:0 0 auto; height:env(safe-area-inset-top,0px); z-index:50; background:var(--bg)}
+.nav{display:flex; align-items:center; justify-content:space-between; gap:1.5rem; min-height:84px}
+.brand{display:block; width:172px; flex:none; padding:4px 0}
+.brand svg{width:100%; height:auto; display:block; overflow:visible}
+.menu{display:flex; gap:1.6rem; list-style:none; margin:0; padding:0; font-weight:550; font-size:.98rem}
+.menu a{text-decoration:none; position:relative; padding:.3rem 0}
+.menu a::after{content:""; position:absolute; left:0; right:0; bottom:-2px; height:2px; background:var(--mauve); transform:scaleX(0); transform-origin:left; transition:transform .25s}
+.menu a:hover::after{transform:scaleX(1)}
+.nav-cta{display:flex; align-items:center; gap:.8rem}
+.nav-phone{font-weight:700; text-decoration:none; white-space:nowrap}
+.burger{display:none; background:none; border:0; color:var(--text); padding:.5rem; cursor:pointer}
+.burger svg{width:28px; height:28px}
+@media (max-width:1060px){
+  .menu{position:absolute; top:100%; left:0; right:0; flex-direction:column; gap:0; background:var(--bg); border-bottom:1px solid var(--line); padding:.5rem 1.25rem 1.25rem; display:none}
+  .menu.open{display:flex}
+  .menu a{display:block; padding:.85rem 0; border-bottom:1px solid var(--line)}
+  .burger{display:block}
+  .nav-cta .btn{display:none}
+}
+
+@media (max-width:520px){.brand{width:122px} .nav{min-height:72px; gap:.6rem} .nav-phone{font-size:.95rem} .burger{padding:.3rem}}
+/* hero */
+.hero{position:relative; overflow:hidden; padding:clamp(3rem,7vw,6rem) 0 clamp(4rem,8vw,7rem)}
+.hero-grid{display:grid; grid-template-columns:1.05fr .95fr; gap:clamp(2rem,5vw,5rem); align-items:center}
+.hero-kicker{font-size:1.05rem; color:var(--muted); margin-bottom:1.4rem; max-width:40ch}
+.hero h1{font-size:clamp(2.6rem, 6vw, 5.2rem); font-weight:750; letter-spacing:-0.04em; line-height:.98; margin-bottom:1.6rem}
+.hero h1 .line{display:block; overflow:hidden; white-space:nowrap; padding-bottom:.04em}
+.hero h1 .line span{display:inline-block; transform:translateY(105%); animation:rise .9s cubic-bezier(.2,.7,.2,1) forwards}
+.hero h1 .line:nth-child(2) span{animation-delay:.12s}
+.hero h1 .line:nth-child(3) span{animation-delay:.24s}
+@keyframes rise{to{transform:none}}
+.hero p.lede{margin-bottom:2rem}
+.hero-actions{display:flex; flex-wrap:wrap; gap:.8rem; margin-bottom:2.4rem}
+.promise{list-style:none; padding:0; margin:0; display:flex; flex-wrap:wrap; gap:.6rem 1.6rem; font-weight:600; font-size:.98rem}
+.promise li{display:flex; align-items:center; gap:.5rem}
+.promise svg{width:16px; height:16px}
+
+.porthole{position:relative; aspect-ratio:1; width:min(100%, 520px); justify-self:center}
+.porthole .photo{position:absolute; inset:9%; border-radius:50%; overflow:hidden; background:var(--bg-alt); box-shadow:0 30px 60px -30px rgba(59,42,104,.55)}
+.porthole .photo img{width:100%; height:100%; object-fit:cover; transform:scale(1.08); animation:settle 1.6s cubic-bezier(.2,.7,.2,1) forwards}
+@keyframes settle{to{transform:scale(1)}}
+.porthole .ring{position:absolute; inset:0; width:100%; height:100%; animation:spin 80s linear infinite}
+.porthole .ring circle{stroke-dasharray:0 19; stroke-dashoffset:0}
+@keyframes spin{to{transform:rotate(360deg)}}
+.porthole .sp{position:absolute; animation:twinkle 3.2s ease-in-out infinite}
+.porthole .sp svg{width:100%; height:100%}
+.sp.a{width:46px; top:4%; right:10%}
+.sp.b{width:26px; top:22%; right:-2%; animation-delay:.8s}
+.sp.c{width:34px; bottom:12%; left:-1%; animation-delay:1.5s}
+.sp.d{width:20px; bottom:2%; left:24%; animation-delay:2.1s}
+@keyframes twinkle{0%,100%{transform:scale(1) rotate(0); opacity:1} 50%{transform:scale(.55) rotate(45deg); opacity:.55}}
+.seal{position:absolute; width:31%; right:-2%; bottom:6%; background:var(--violet); border-radius:50%; color:#fff; box-shadow:0 14px 30px -14px rgba(36,24,67,.7)}
+.seal svg.txt{width:100%; height:auto; display:block; animation:spin 30s linear infinite reverse}
+.seal text{font:600 12.5px var(--display); letter-spacing:.12em; fill:#fff}
+.seal .core{position:absolute; inset:30%; display:grid; place-items:center}
+.seal .core svg{width:100%; height:100%}
+.hero-bg{position:absolute; inset:auto -20% -55% auto; width:80vw; max-width:1100px; aspect-ratio:1; border-radius:50%; background:radial-gradient(closest-side, var(--bg-alt), transparent); z-index:-1}
+@media (max-width:880px){
+  .hero-grid{grid-template-columns:1fr}
+  .porthole{width:min(88%, 420px); order:-1}
+}
+
+/* about */
+.about{padding:clamp(4rem,9vw,8rem) 0; background:var(--bg-alt)}
+.about-grid{display:grid; grid-template-columns:.85fr 1.15fr; gap:clamp(2rem,6vw,6rem); align-items:center}
+.arch{position:relative}
+.arch img{width:100%; aspect-ratio:3/4; object-fit:cover; border-radius:999px 999px 28px 28px}
+.arch .tag{position:absolute; left:-1rem; bottom:2rem; background:var(--surface); padding:1rem 1.2rem; border-radius:18px; box-shadow:0 20px 40px -24px rgba(36,24,67,.45); max-width:230px; font-size:.95rem; line-height:1.4}
+.arch .tag strong{display:block; font-size:1.6rem; color:var(--violet); letter-spacing:-0.02em}
+.letter h2{margin-bottom:1.6rem}
+.letter p{font-size:1.1rem; max-width:60ch}
+.letter .big{font-size:clamp(1.3rem,2.2vw,1.6rem); line-height:1.35; font-weight:500; color:var(--text); max-width:34ch; margin-bottom:1.4rem}
+.sign{font-family:var(--script); font-size:3.4rem; color:var(--violet); line-height:1; margin-top:1.4rem}
+.sign small{display:block; font-family:var(--display); font-size:.95rem; color:var(--muted); margin-top:.3rem}
+@media (max-width:880px){.about-grid{grid-template-columns:1fr} .arch{max-width:420px}}
+
+/* services */
+.services{padding:clamp(4rem,9vw,8rem) 0}
+.svc-head{display:flex; justify-content:space-between; align-items:end; gap:2rem; flex-wrap:wrap; margin-bottom:3rem}
+.svc-head p{max-width:44ch; color:var(--muted); margin:0}
+.split{display:grid; grid-template-columns:1fr 1fr; border-radius:36px; overflow:hidden; box-shadow:0 40px 80px -50px rgba(36,24,67,.6)}
+.half{padding:clamp(1.8rem,4vw,3.2rem); display:flex; flex-direction:column}
+.half.day{background:var(--surface)}
+.half.night{background:var(--night); color:var(--on-dark)}
+.half-top{display:flex; align-items:center; gap:.9rem; margin-bottom:1.8rem}
+.half-top .ic{width:52px; height:52px; border-radius:50%; display:grid; place-items:center; background:var(--bg-alt); flex:none}
+.half.night .half-top .ic{background:rgba(255,255,255,.08)}
+.half-top .ic svg{width:26px; height:26px}
+.half-top h3{font-size:1.8rem}
+.half-top span{display:block; font-size:.95rem; color:var(--muted); font-weight:500}
+.half.night .half-top span{color:var(--on-dark-muted)}
+.row{display:grid; grid-template-columns:76px 1fr auto; gap:1.1rem; align-items:center; padding:1.2rem 0; border-top:1px dashed var(--line)}
+.row:last-child{border-bottom:1px dashed var(--line)}
+.row img{width:76px; height:76px; border-radius:50%; object-fit:cover}
+.row h4{margin:0 0 .2rem; font-size:1.12rem; letter-spacing:-0.01em}
+.row p{margin:0; font-size:.95rem; color:var(--muted); line-height:1.45}
+.price{text-align:right; font-weight:750; font-size:1.25rem; color:var(--violet); white-space:nowrap; letter-spacing:-0.02em}
+.price small{display:block; font-size:.78rem; font-weight:500; color:var(--muted); letter-spacing:0}
+.office-photo{border-radius:24px; overflow:hidden; margin-bottom:1.6rem; aspect-ratio:16/10}
+.office-photo img{width:100%; height:100%; object-fit:cover}
+.chips{display:flex; flex-wrap:wrap; gap:.5rem; list-style:none; padding:0; margin:0 0 1.6rem}
+.chips li{border:1px solid rgba(255,255,255,.22); border-radius:999px; padding:.45rem .95rem; font-size:.92rem}
+.night-note{display:flex; gap:.8rem; align-items:flex-start; background:rgba(255,255,255,.06); border-radius:18px; padding:1rem 1.2rem; font-size:.95rem; color:var(--on-dark-muted); margin-top:auto}
+.night-note svg{width:22px; height:22px; flex:none; margin-top:2px}
+.half .btn{align-self:flex-start; margin-top:1.6rem}
+.half.day .btn{margin-top:auto}
+.half.day .row:last-of-type{margin-bottom:1.6rem}
+.half.night .btn-solid{background:var(--mauve)}
+.half.night .btn-solid:hover{background:#8d5282}
+@media (max-width:900px){.split{grid-template-columns:1fr; border-radius:28px} .row{grid-template-columns:60px 1fr} .row img{width:60px;height:60px} .price{grid-column:2; text-align:left}}
+
+/* amenities */
+.amen{padding:clamp(4rem,8vw,7rem) 0; background:var(--bg-alt)}
+.amen-grid{display:grid; grid-template-columns:1fr 1.25fr; gap:clamp(2rem,6vw,5rem); align-items:center}
+.amen-photo{position:relative}
+.amen-photo img{width:100%; aspect-ratio:3/4; object-fit:cover; border-radius:28px}
+.amen-photo .badge{position:absolute; top:-26px; right:-18px; width:120px}
+.amen h2{margin-bottom:2rem}
+.amen ul{list-style:none; margin:0; padding:0}
+.amen li{display:grid; grid-template-columns:44px 1fr; gap:1rem; padding:1.15rem 0; border-bottom:1px solid var(--line)}
+.amen li:first-child{border-top:1px solid var(--line)}
+.amen li svg{width:30px; height:30px; margin-top:2px}
+.amen li strong{display:block; font-size:1.15rem; letter-spacing:-0.01em}
+.amen li span{color:var(--muted); font-size:.98rem}
+@media (max-width:880px){.amen-grid{grid-template-columns:1fr} .amen-photo{max-width:380px}}
+
+/* hours */
+.hours{background:var(--night); color:var(--on-dark); padding:clamp(4rem,9vw,8rem) 0; position:relative; overflow:hidden}
+.hours .stars{position:absolute; inset:0; pointer-events:none; opacity:.5}
+.hours-head{display:grid; grid-template-columns:1fr auto; gap:2rem; align-items:end; margin-bottom:2.6rem}
+.hours-head p{color:var(--on-dark-muted); max-width:46ch; margin:.8rem 0 0}
+.legend{display:flex; gap:1.4rem; font-size:.95rem; color:var(--on-dark-muted); flex-wrap:wrap}
+.legend i{display:inline-block; width:28px; height:12px; border-radius:6px; margin-right:.5rem; vertical-align:middle}
+.legend .r{background:linear-gradient(90deg,#F3D9EC,#D7B5E8)}
+.legend .c{background:linear-gradient(90deg,#8C6BD1,#5E449C)}
+.clock{position:relative}
+.scale{display:grid; grid-template-columns:120px 1fr; gap:1rem; font-size:.8rem; color:var(--on-dark-muted); margin-bottom:.6rem}
+.scale .ticks{display:flex; justify-content:space-between}
+.hday{display:grid; grid-template-columns:120px 1fr; gap:1rem; align-items:center; padding:.55rem 0}
+.hday .name{font-weight:650; font-size:1.02rem}
+.hday.today .name::after{content:"today"; margin-left:.5rem; font-size:.72rem; font-weight:600; background:var(--mauve); color:#fff; border-radius:999px; padding:.12rem .5rem; vertical-align:middle}
+.track{position:relative; height:44px; border-radius:12px; background:repeating-linear-gradient(90deg, rgba(255,255,255,.06) 0 1px, transparent 1px calc(100%/24)), rgba(255,255,255,.04)}
+.bar{position:absolute; top:5px; bottom:5px; border-radius:9px; display:flex; align-items:center; padding:0 .7rem; font-size:.82rem; font-weight:650; white-space:nowrap; overflow:hidden; transform-origin:left; transform:scaleX(0); transition:transform 1.1s cubic-bezier(.2,.7,.2,1)}
+.bar.r{background:linear-gradient(90deg,#F3D9EC,#D7B5E8); color:var(--night)}
+.bar.c{background:linear-gradient(90deg,#8C6BD1,#5E449C); color:#fff}
+.bar.c.open{border-radius:9px 0 0 9px}
+.clock.go .bar{transform:none}
+.clock.go .hday:nth-child(3) .bar{transition-delay:.08s}
+.clock.go .hday:nth-child(4) .bar{transition-delay:.16s}
+.clock.go .hday:nth-child(5) .bar{transition-delay:.24s}
+.clock.go .hday:nth-child(6) .bar{transition-delay:.32s}
+.clock.go .hday:nth-child(7) .bar{transition-delay:.4s}
+.clock.go .hday:nth-child(8) .bar{transition-delay:.48s}
+.fine{margin-top:1.6rem; font-size:.92rem; color:var(--on-dark-muted)}
+@media (max-width:760px){
+  .hours-head{grid-template-columns:1fr}
+  .scale, .hday{grid-template-columns:52px 1fr; gap:.6rem}
+  .hday .name{font-size:.9rem}
+  .hday.today .name::after{display:none}
+  .bar{font-size:.68rem; padding:0 .4rem}
+  .bar .lbl-long{display:none}
+}
+@media (min-width:761px){.bar .lbl-short{display:none}}
+
+/* location */
+.loc{padding:clamp(4rem,9vw,8rem) 0}
+.loc-grid{display:grid; grid-template-columns:1.1fr .9fr; gap:clamp(2rem,6vw,5rem); align-items:center}
+.rings{width:100%; max-width:560px; justify-self:center}
+.rings text{font-family:var(--display)}
+.loc h2{margin-bottom:1.2rem}
+.areas{list-style:none; padding:0; margin:1.8rem 0 0}
+.areas li{display:flex; justify-content:space-between; gap:1rem; padding:.85rem 0; border-bottom:1px solid var(--line); font-size:1.05rem}
+.areas li b{font-weight:650}
+.areas li span{color:var(--muted); text-align:right}
+@media (max-width:880px){.loc-grid{grid-template-columns:1fr}}
+
+/* faq */
+.faq{padding:clamp(4rem,8vw,7rem) 0; background:var(--bg-alt)}
+.faq-grid{display:grid; grid-template-columns:.8fr 1.2fr; gap:clamp(2rem,6vw,5rem); align-items:start}
+.faq-grid > div:first-child{position:sticky; top:120px}
+.faq-grid > div:first-child p{color:var(--muted); margin-top:1rem}
+details{background:var(--surface); border-radius:20px; margin-bottom:.8rem; border:1px solid var(--line)}
+summary{list-style:none; cursor:pointer; padding:1.25rem 1.4rem; font-weight:650; font-size:1.1rem; display:flex; justify-content:space-between; gap:1rem; align-items:center}
+summary::-webkit-details-marker{display:none}
+summary .pm{width:30px; height:30px; border-radius:50%; background:var(--bg-alt); display:grid; place-items:center; flex:none; transition:transform .3s, background .3s}
+summary .pm svg{width:14px; height:14px}
+details[open] summary .pm{transform:rotate(45deg); background:var(--violet); color:#fff}
+details .ans{padding:0 1.4rem 1.3rem; color:var(--muted); max-width:62ch}
+details .ans p{margin:0}
+@media (max-width:880px){.faq-grid{grid-template-columns:1fr} .faq-grid > div:first-child{position:static}}
+
+/* gift */
+.gift{padding:clamp(3rem,6vw,5rem) 0}
+.gift-card{position:relative; overflow:hidden; border-radius:36px; background:linear-gradient(120deg, var(--violet) 0%, #7A4F9E 55%, var(--mauve) 100%); color:#fff; padding:clamp(2rem,5vw,3.6rem); display:grid; grid-template-columns:1.3fr auto; gap:2rem; align-items:center}
+.gift-card h2{font-size:clamp(1.9rem,3.6vw,2.8rem); margin-bottom:.6rem}
+.gift-card p{margin:0; color:#F1E3F3; max-width:50ch}
+.gift-card .btn{background:#fff; color:var(--violet)}
+.gift-card .deco{position:absolute; right:-60px; top:-60px; width:260px; opacity:.25}
+@media (max-width:760px){.gift-card{grid-template-columns:1fr}}
+
+/* contact */
+.contact{padding:clamp(4rem,8vw,7rem) 0 clamp(5rem,9vw,8rem)}
+.contact-grid{display:grid; grid-template-columns:.9fr 1.1fr; border-radius:36px; overflow:hidden; background:var(--surface); border:1px solid var(--line)}
+.contact-side{position:relative; color:#fff; padding:clamp(2rem,4vw,3rem); display:flex; flex-direction:column; justify-content:flex-end; min-height:520px}
+.contact-side img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover}
+.contact-side::before{content:""; position:absolute; inset:0; background:linear-gradient(180deg, rgba(36,24,67,.15) 0%, rgba(36,24,67,.9) 70%); z-index:1}
+.contact-side > *:not(img){position:relative; z-index:2}
+.contact-side h2{margin-bottom:1rem}
+.contact-side a{display:flex; gap:.8rem; align-items:center; text-decoration:none; font-weight:600; font-size:1.1rem; padding:.55rem 0}
+.contact-side a svg{width:20px; height:20px; flex:none}
+.form{padding:clamp(2rem,4vw,3rem)}
+.form p.note{color:var(--muted)}
+.field{display:block; margin-bottom:1rem}
+.field span{display:block; font-weight:600; font-size:.95rem; margin-bottom:.35rem}
+.field input, .field textarea{width:100%; font:inherit; color:var(--text); background:var(--bg); border:1.5px solid var(--line); border-radius:14px; padding:.85rem 1rem; transition:border-color .2s}
+.field input:focus, .field textarea:focus{outline:none; border-color:var(--violet)}
+.field textarea{min-height:130px; resize:vertical}
+.two{display:grid; grid-template-columns:1fr 1fr; gap:1rem}
+.form .status{margin-top:.8rem; font-size:.95rem; color:var(--muted); min-height:1.4em}
+@media (max-width:880px){.contact-grid{grid-template-columns:1fr} .contact-side{min-height:420px} .two{grid-template-columns:1fr}}
+
+/* footer */
+footer{background:var(--night); color:var(--on-dark-muted); padding:4rem 0 2rem; font-size:.98rem}
+.foot{display:grid; grid-template-columns:1.2fr 1fr 1fr 1fr; gap:2.4rem}
+.foot .brand{width:180px; background:#fff; border-radius:24px; padding:.8rem 1rem}
+.foot h4{color:#fff; margin:0 0 1rem; font-size:1.05rem}
+.foot ul{list-style:none; margin:0; padding:0}
+.foot li{margin-bottom:.55rem}
+.foot a{text-decoration:none}
+.foot a:hover{color:#fff}
+.foot-bottom{margin-top:3rem; padding-top:1.5rem; border-top:1px solid rgba(255,255,255,.12); display:flex; justify-content:space-between; flex-wrap:wrap; gap:1rem; font-size:.9rem}
+.foot-bottom a{color:#fff; font-weight:600}
+@media (max-width:880px){.foot{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.foot{grid-template-columns:1fr}}
+
+/* mobile bar */
+.mbar{display:none}
+@media (max-width:760px){
+  .mbar{display:grid; grid-template-columns:1fr 1fr; gap:.6rem; position:fixed; left:0; right:0; bottom:0; z-index:45; padding:.7rem .9rem calc(.7rem + env(safe-area-inset-bottom,0px)); background:var(--bg); border-top:1px solid var(--line)}
+  .mbar .btn{justify-content:center; padding:.8rem 1rem}
+  footer{padding-bottom:6rem}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none !important; transition:none !important}
+  .hero h1 .line span{transform:none}
+  .bar{transform:none}
+}
+</style>
+</head>
+<body>
+
+<!-- Logo (vector rebuild of the original Danica's Cleaning Service mark) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <path id="spk" d="M0-10C1-3 3-1 10 0C3 1 1 3 0 10C-1 3-3 1-10 0C-3-1-1-3 0-10Z"/>
+    <path id="logoArc" d="M62 205 A138 138 0 0 1 338 205"/>
+    <symbol id="logo" viewBox="24 10 352 314">
+      <text font-family="Great Vibes, cursive" font-size="47" fill="#5E449C"><textPath href="#logoArc" startOffset="50%" text-anchor="middle" textLength="292" lengthAdjust="spacingAndGlyphs">Danica's Cleaning Service</textPath></text>
+      <circle cx="200" cy="218" r="100" fill="none" stroke="#A46496" stroke-width="6.5" stroke-linecap="round" stroke-dasharray="0 15.7"/>
+      <g stroke="#5E449C" stroke-width="5" stroke-linecap="round"><path d="M140 176 106 164"/><path d="M140 182 104 182"/><path d="M140 188 106 200"/></g>
+      <g fill="#5E449C">
+        <rect x="143" y="170" width="20" height="24" rx="4"/>
+        <path d="M160 166c0-5 4-8 9-8h44c6 0 11 3 15 8l22 28c3 4 1 9-4 9h-46v8h-26v-22h-14z"/>
+        <path d="M175 196c-1 14-6 26-16 36-2 2-6 0-5-3 5-9 8-19 9-33z"/>
+        <rect x="196" y="206" width="36" height="12" rx="2"/>
+        <path d="M193 218h42l20 64c2 7-2 12-9 12h-64c-7 0-11-5-9-12z"/>
+      </g>
+      <path d="M214 236 232 290h-36z" fill="#FFFFFF" opacity=".9"/>
+      <g fill="#A46496">
+        <use href="#spk" transform="translate(254 140) scale(1.1)"/>
+        <use href="#spk" transform="translate(284 182) scale(2)"/>
+        <use href="#spk" transform="translate(292 228) scale(.9)"/>
+        <use href="#spk" transform="translate(270 256) scale(1.6)"/>
+        <use href="#spk" transform="translate(130 238) scale(1.6)"/>
+        <use href="#spk" transform="translate(150 272) scale(1)"/>
+        <use href="#spk" transform="translate(120 278) scale(.8)"/>
+        <use href="#spk" transform="translate(246 292) scale(.8)"/>
+      </g>
+    </symbol>
+  </defs>
+</svg>
+
+<div class="ribbon">Gift certificates now available for purchase! <a href="https://checkout.yourgift.cards/76f391c7-7bdd-47bf-b7de-a044f3039be0?platform=Hosted" target="_blank" rel="noopener">Click here</a></div>
+
+<header class="site">
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="Danica's Cleaning Service home"><svg viewBox="24 10 352 314" role="img" aria-label="Danica's Cleaning Service logo"><use href="#logo"/></svg></a>
+    <ul class="menu" id="menu">
+      <li><a href="#about_us">About Me</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#amenities">Amenities</a></li>
+      <li><a href="#location">Location</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="https://danicacleans.com/reviews">Reviews</a></li>
+      <li><a href="https://checkout.yourgift.cards/76f391c7-7bdd-47bf-b7de-a044f3039be0?platform=Hosted" target="_blank" rel="noopener">Gift Certificates</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a class="nav-phone" href="tel:+17802188529">(780) 218-8529</a>
+      <a class="btn btn-solid" href="#contact">Contact Me</a>
+      <button class="burger" aria-label="Open menu" aria-expanded="false" aria-controls="menu" id="burger"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="wrap hero-grid">
+    <div>
+      <p class="hero-kicker">Residential and commercial cleaning across Edmonton and the surrounding area</p>
+      <h1><span class="line"><span>When you book</span></span><span class="line"><span>with me,</span></span><span class="line"><span>you get me.</span></span></h1>
+      <p class="lede">Not a rotating crew of strangers. Consistent, detailed work, whether it's a recurring clean, a one-time deep clean, or getting a space back on track after a busy stretch.</p>
+      <div class="hero-actions">
+        <a class="btn btn-solid" href="tel:+17802188529"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>Call (780) 218-8529</a>
+        <a class="btn btn-ghost" href="#contact">Send a message</a>
+      </div>
+      <ul class="promise">
+        <li><svg viewBox="-10 -10 20 20"><use href="#spk" class="spark"/></svg>$2 million liability coverage</li>
+        <li><svg viewBox="-10 -10 20 20"><use href="#spk" class="spark"/></svg>WCB covered</li>
+        <li><svg viewBox="-10 -10 20 20"><use href="#spk" class="spark"/></svg>All my own supplies</li>
+      </ul>
+    </div>
+    <div class="porthole">
+      <svg class="ring" viewBox="0 0 200 200" aria-hidden="true"><circle cx="100" cy="100" r="96" fill="none" stroke="#A46496" stroke-width="2.6" stroke-linecap="round"/></svg>
+      <div class="photo"><img src="images/hero.jpg" alt="A freshly cleaned, bright living room"></div>
+      <span class="sp a" aria-hidden="true"><svg viewBox="-10 -10 20 20"><use href="#spk" class="spark"/></svg></span>
+      <span class="sp b" aria-hidden="true"><svg viewBox="-10 -10 20 20"><use href="#spk" fill="#5E449C"/></svg></span>
+      <span class="sp c" aria-hidden="true"><svg viewBox="-10 -10 20 20"><use href="#spk" class="spark"/></svg></span>
+      <span class="sp d" aria-hidden="true"><svg viewBox="-10 -10 20 20"><use href="#spk" fill="#5E449C"/></svg></span>
+      <div class="seal" aria-hidden="true">
+        <svg class="txt" viewBox="0 0 160 160"><defs><path id="sealPath" d="M80 80m-60 0a60 60 0 1 1 120 0a60 60 0 1 1-120 0"/></defs><text><textPath href="#sealPath" textLength="372" lengthAdjust="spacing">FULLY INSURED ✦ WCB COVERED ✦ OWN SUPPLIES ✦</textPath></text></svg>
+        <div class="core"><svg viewBox="-10 -10 20 20"><use href="#spk" fill="#fff"/></svg></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about_us">
+  <div class="wrap about-grid">
+    <div class="arch">
+      <img src="images/about-hands.jpg" alt="Danica wiping down a kitchen counter" loading="lazy">
+      <div class="tag"><strong>One cleaner.</strong>The same person at every visit, from the first clean onward.</div>
+    </div>
+    <div class="letter">
+      <h2>Hi, my name is Danica Sewell.</h2>
+      <p class="big">I provide residential and commercial cleaning across Edmonton and the surrounding area.</p>
+      <p>When you book with me, you get me, not a rotating crew of strangers. I take pride in consistent, detailed work, whether it's a recurring clean that keeps your home or office running smoothly, a one-time deep clean, or getting a space back on track after a busy stretch.</p>
+      <p>I'm fully insured with $2 million in commercial liability coverage and I also carry WCB. Plus I bring all my own cleaning supplies and equipment with me, so there's nothing you need to provide.</p>
+      <p>Reliable, thorough, and easy to reach. That's the service I aim to give every client, every visit.</p>
+      <div class="sign">Danica<small>Danica Sewell, owner</small></div>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="svc-head">
+      <h2>Homes by day.<br>Offices by night.</h2>
+      <p>Residential cleans happen during the day. Commercial cleans happen after you close, so your space is ready when you open.</p>
+    </div>
+    <div class="split">
+      <div class="half day">
+        <div class="half-top">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#5E449C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/><path d="M10 21v-6h4v6"/></svg></div>
+          <div><h3>Residential Cleaning</h3><span>Homes, condos and short-term rentals</span></div>
+        </div>
+        <div class="row">
+          <img src="images/residential.jpg" alt="Clean kitchen after a recurring clean" loading="lazy">
+          <div><h4>Weekly, bi-weekly or monthly cleans</h4><p>Recurring cleans that keep your home running smoothly.</p></div>
+          <div class="price">$40<small>per hour + GST</small></div>
+        </div>
+        <div class="row">
+          <img src="images/airbnb.jpg" alt="A freshly made bed in a short-term rental" loading="lazy">
+          <div><h4>Airbnbs and short-term rentals</h4><p>Yes, I clean Airbnbs and other short-term rentals.</p></div>
+          <div class="price"><small>Ask for a quote</small></div>
+        </div>
+        <div class="row">
+          <img src="images/moveout.jpg" alt="An empty, freshly cleaned home ready for move out" loading="lazy">
+          <div><h4>Move out cleans</h4><p>For current clients who move while I'm cleaning for them. Includes inside cabinets, drawers, fridge and oven, plus walls, trim and doors.</p></div>
+          <div class="price">$450<small>first 8 hours, then $55/hr</small></div>
+        </div>
+        <a class="btn btn-solid" href="https://danicacleans.com/offerings">View all services</a>
+      </div>
+      <div class="half night">
+        <div class="half-top">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#D9B9D3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg></div>
+          <div><h3>Commercial Cleaning</h3><span>Office cleaning, after hours</span></div>
+        </div>
+        <div class="office-photo"><img src="images/office.jpg" alt="A clean office after hours" loading="lazy"></div>
+        <ul class="chips">
+          <li>Medical offices</li><li>Tire shops</li><li>Engineering offices</li><li>Sales offices</li><li>Construction company offices</li><li>Coworking spaces</li>
+        </ul>
+        <div class="night-note"><svg viewBox="0 0 24 24" fill="none" stroke="#D9B9D3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>I don't clean while a business is open to the public or to staff. Coworking spaces with 24/7 member access are the exception.</span></div>
+        <a class="btn btn-solid" href="https://danicacleans.com/services/commercial-cleaning/office-cleaning-26013440">Office cleaning options</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="amen" id="amenities">
+  <div class="wrap amen-grid">
+    <div class="amen-photo">
+      <img src="images/supplies.jpg" alt="Danica's own cleaning caddy, vacuum and mop" loading="lazy">
+      <svg class="badge" viewBox="24 10 352 314" aria-hidden="true" style="background:#fff;border-radius:50%;padding:10px;box-shadow:0 16px 30px -16px rgba(36,24,67,.5)"><use href="#logo"/></svg>
+    </div>
+    <div>
+      <h2>Comes with every visit</h2>
+      <ul>
+        <li><svg viewBox="-10 -10 20 20"><use href="#spk" class="spark"/></svg><div><strong>Fully insured</strong><span>$2 million in commercial liability coverage.</span></div></li>
+        <li><svg viewBox="-10 -10 20 20"><use href="#spk" fill="#5E449C"/></svg><div><strong>WCB coverage</strong><span>I carry WCB as well as liability insurance.</span></div></li>
+        <li><svg viewBox="-10 -10 20 20"><use href="#spk" class="spark"/></svg><div><strong>All my own supplies and equipment</strong><span>Cleaning products, vacuum, rags and mop. There's nothing you need to provide.</span></div></li>
+        <li><svg viewBox="-10 -10 20 20"><use href="#spk" fill="#5E449C"/></svg><div><strong>Eco-friendly requests welcome</strong><span>I'm more than happy to accommodate eco-friendly cleaning requests.</span></div></li>
+        <li><svg viewBox="-10 -10 20 20"><use href="#spk" class="spark"/></svg><div><strong>The same face every time</strong><span>You get me, every visit. Reliable, thorough and easy to reach.</span></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="hours" id="hours">
+  <svg class="stars" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true" fill="#A46496">
+    <use href="#spk" transform="translate(90 80) scale(.9)"/><use href="#spk" transform="translate(1080 120) scale(1.4)"/><use href="#spk" transform="translate(980 520) scale(.7)"/><use href="#spk" transform="translate(240 540) scale(.6)"/><use href="#spk" transform="translate(640 60) scale(.5)"/>
+  </svg>
+  <div class="wrap">
+    <div class="hours-head">
+      <div>
+        <h2>Hours of operation</h2>
+        <p>Daytime is for homes. Evenings and weekends are for businesses.</p>
+      </div>
+      <div class="legend"><span><i class="r"></i>Residential</span><span><i class="c"></i>Commercial</span></div>
+    </div>
+    <div class="clock" id="clock">
+      <div class="scale"><span></span><div class="ticks"><span>12am</span><span>6am</span><span>12pm</span><span>6pm</span><span>12am</span></div></div>
+      <div class="hday" data-d="1"><div class="name">Mon</div><div class="track"><div class="bar r" style="left:37.5%;width:29.17%"><span class="lbl-long">9am – 4pm</span><span class="lbl-short">9–4</span></div><div class="bar c open" style="left:89.58%;width:10.42%"><span class="lbl-long">9:30pm+</span><span class="lbl-short">9:30+</span></div></div></div>
+      <div class="hday" data-d="2"><div class="name">Tue</div><div class="track"><div class="bar r" style="left:37.5%;width:29.17%"><span class="lbl-long">9am – 4pm</span><span class="lbl-short">9–4</span></div><div class="bar c open" style="left:89.58%;width:10.42%"><span class="lbl-long">9:30pm+</span><span class="lbl-short">9:30+</span></div></div></div>
+      <div class="hday" data-d="3"><div class="name">Wed</div><div class="track"><div class="bar r" style="left:37.5%;width:33.33%"><span class="lbl-long">9am – 5pm</span><span class="lbl-short">9–5</span></div><div class="bar c open" style="left:70.83%;width:29.17%"><span class="lbl-long">after 5pm</span><span class="lbl-short">5pm+</span></div></div></div>
+      <div class="hday" data-d="4"><div class="name">Thu</div><div class="track"><div class="bar r" style="left:37.5%;width:29.17%"><span class="lbl-long">9am – 4pm</span><span class="lbl-short">9–4</span></div><div class="bar c open" style="left:83.33%;width:16.67%"><span class="lbl-long">after 8pm</span><span class="lbl-short">8pm+</span></div></div></div>
+      <div class="hday" data-d="5"><div class="name">Fri</div><div class="track"><div class="bar c open" style="left:81.25%;width:18.75%"><span class="lbl-long">after 7:30pm</span><span class="lbl-short">7:30+</span></div></div></div>
+      <div class="hday" data-d="6"><div class="name">Sat</div><div class="track"><div class="bar c" style="left:0;width:100%"><span class="lbl-long">Commercial: available 24/7*</span><span class="lbl-short">24/7*</span></div></div></div>
+      <div class="hday" data-d="0"><div class="name">Sun</div><div class="track"><div class="bar c" style="left:0;width:100%"><span class="lbl-long">Commercial: available 24/7*</span><span class="lbl-short">24/7*</span></div></div></div>
+    </div>
+    <p class="fine">Residential hours: Monday to Thursday. Commercial hours: evenings Monday to Friday, and Saturday &amp; Sunday available 24/7*.</p>
+  </div>
+</section>
+
+<section class="loc" id="location">
+  <div class="wrap loc-grid">
+    <svg class="rings" viewBox="0 0 500 500" role="img" aria-labelledby="ringsTitle">
+      <title id="ringsTitle">Minimum booking hours grow with distance from Sherwood Park</title>
+      <g fill="none" stroke-linecap="round">
+        <circle cx="250" cy="250" r="225" stroke="var(--line)" stroke-width="3" stroke-dasharray="0 12"/>
+        <circle cx="250" cy="250" r="180" stroke="#C9A6C4" stroke-width="4" stroke-dasharray="0 13"/>
+        <circle cx="250" cy="250" r="135" stroke="#A46496" stroke-width="5" stroke-dasharray="0 14"/>
+        <circle cx="250" cy="250" r="90" stroke="#7C55A8" stroke-width="5.5" stroke-dasharray="0 15"/>
+      </g>
+      <circle cx="250" cy="250" r="56" fill="#5E449C"/>
+      <text x="250" y="244" text-anchor="middle" fill="#fff" font-size="15" font-weight="700">Sherwood Park</text>
+      <text x="250" y="266" text-anchor="middle" fill="#E9DDF3" font-size="14">2 hr min</text>
+      <g font-size="14" font-weight="650" fill="var(--text)">
+        <g transform="translate(250 160)"><rect x="-62" y="-15" width="124" height="30" rx="15" fill="var(--surface)" stroke="var(--line)"/><text y="5" text-anchor="middle">Edmonton 3–4 hr</text></g>
+        <g transform="translate(372 300)"><rect x="-58" y="-15" width="116" height="30" rx="15" fill="var(--surface)" stroke="var(--line)"/><text y="5" text-anchor="middle">St. Albert 4 hr</text></g>
+        <g transform="translate(118 384)"><rect x="-72" y="-15" width="144" height="30" rx="15" fill="var(--surface)" stroke="var(--line)"/><text y="5" text-anchor="middle">Spruce Grove 5 hr</text></g>
+      </g>
+      <g font-size="12.5" fill="var(--muted)" text-anchor="middle">
+        <text x="250" y="18">Fort Saskatchewan</text>
+        <text x="455" y="120">Beaumont</text>
+        <text x="420" y="470">Ardrossan</text>
+      </g>
+      <g fill="#A46496"><use href="#spk" transform="translate(70 90) scale(1.4)"/><use href="#spk" transform="translate(440 60) scale(.8)"/></g>
+    </svg>
+    <div>
+      <h2>Areas covered</h2>
+      <p class="lede">Edmonton, Sherwood Park, St. Albert, Spruce Grove, Fort Saskatchewan, Beaumont and Ardrossan. Minimum hours depend on where you are.</p>
+      <ul class="areas">
+        <li><b>Sherwood Park</b><span>2 hour minimum</span></li>
+        <li><b>Edmonton</b><span>3 or 4 hours, east or west of the river</span></li>
+        <li><b>St. Albert</b><span>4 hour minimum</span></li>
+        <li><b>Spruce Grove</b><span>5 hour minimum</span></li>
+        <li><b>Other areas</b><span>Please contact me</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="faq" id="faq">
+  <div class="wrap faq-grid">
+    <div>
+      <h2>FAQ</h2>
+      <p>Quick answers before you book. Anything else, just send me a message.</p>
+      <a class="btn btn-ghost" href="#contact" style="margin-top:.6rem">Ask a question</a>
+    </div>
+    <div>
+      <details open><summary>Do you clean Airbnbs or short-term rentals?<span class="pm"><svg viewBox="0 0 14 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 1v12M1 7h12"/></svg></span></summary><div class="ans"><p>Yes, I clean Airbnbs and other short-term rentals.</p></div></details>
+      <details><summary>Do you do move out cleans?<span class="pm"><svg viewBox="0 0 14 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 1v12M1 7h12"/></svg></span></summary><div class="ans"><p>Most of the time no. But I will occasionally do move out cleans for current clients if they move while I'm already cleaning for them.</p></div></details>
+      <details><summary>Do you have a minimum number of hours?<span class="pm"><svg viewBox="0 0 14 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 1v12M1 7h12"/></svg></span></summary><div class="ans"><p>Yes. Within Sherwood Park it's 2 hours. Edmonton is 3 or 4 (east or west of the river, generally). St. Albert is 4. Spruce Grove is 5. For other areas, please contact me.</p></div></details>
+      <details><summary>Will you clean my business while it's open?<span class="pm"><svg viewBox="0 0 14 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 1v12M1 7h12"/></svg></span></summary><div class="ans"><p>No. The odd worker popping in quickly while I clean on a weekend is fine, but I don't clean while a business is generally open to the public or to staff. Coworking spaces with 24/7 member access are an exception.</p></div></details>
+      <details><summary>Can I provide supplies for you to use?<span class="pm"><svg viewBox="0 0 14 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 1v12M1 7h12"/></svg></span></summary><div class="ans"><p>No. I only use my own cleaning supplies, including cleaning products, vacuum, rags and mop. No exceptions. I'm more than happy to accommodate eco-friendly cleaning requests.</p></div></details>
+      <details><summary>Are you insured?<span class="pm"><svg viewBox="0 0 14 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 1v12M1 7h12"/></svg></span></summary><div class="ans"><p>Yes. I carry liability insurance as well as WCB.</p></div></details>
+    </div>
+  </div>
+</section>
+
+<section class="gift">
+  <div class="wrap">
+    <div class="gift-card">
+      <svg class="deco" viewBox="0 0 200 200" aria-hidden="true"><circle cx="100" cy="100" r="90" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-dasharray="0 14"/><use href="#spk" fill="#fff" transform="translate(100 100) scale(4)"/></svg>
+      <div>
+        <h2>Gift certificates now available</h2>
+        <p>Gift certificates can be purchased online.</p>
+      </div>
+      <a class="btn" href="https://checkout.yourgift.cards/76f391c7-7bdd-47bf-b7de-a044f3039be0?platform=Hosted" target="_blank" rel="noopener">Buy a gift certificate</a>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap contact-grid">
+    <div class="contact-side">
+      <img src="images/cta.jpg" alt="" loading="lazy">
+      <h2>Contact me</h2>
+      <a href="tel:+17802188529"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>(780) 218-8529</a>
+      <a href="mailto:Dsewell@live.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>Dsewell@live.com</a>
+      <a href="https://maps.google.com/?q=Edmonton%2C%20Alberta" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>Edmonton, Alberta</a>
+    </div>
+    <form class="form" id="contactForm" novalidate>
+      <h3 style="font-size:1.7rem;margin-bottom:.6rem">Send me a message</h3>
+      <p class="note">Please send me a message and I will get back to you by email shortly!</p>
+      <label class="field"><span>Tell me about your request</span><textarea name="request" required></textarea></label>
+      <div class="two">
+        <label class="field"><span>Your name</span><input name="name" autocomplete="name" required></label>
+        <label class="field"><span>Your phone number</span><input name="phone" type="tel" autocomplete="tel"></label>
+      </div>
+      <label class="field"><span>Your email</span><input name="email" type="email" autocomplete="email" required></label>
+      <button class="btn btn-solid" type="submit">Send message</button>
+      <p class="status" id="formStatus" role="status"></p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a class="brand" href="#top" aria-label="Danica's Cleaning Service home"><svg viewBox="24 10 352 314" role="img" aria-label="Danica's Cleaning Service logo"><use href="#logo"/></svg></a>
+        <p style="margin-top:1.2rem;max-width:32ch">Residential and commercial cleaning across Edmonton and the surrounding area.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="#about_us">About Me</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#amenities">Amenities</a></li>
+          <li><a href="#location">Location</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="https://danicacleans.com/reviews">Reviews</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li><a href="https://danicacleans.com/services/residential-cleaning/weekly-bi-weekly-monthly-cleans-26013438">Weekly, bi-weekly and monthly cleans</a></li>
+          <li><a href="https://danicacleans.com/services/residential-cleaning/move-out-cleans-150656576">Move out cleans</a></li>
+          <li><a href="https://danicacleans.com/services/commercial-cleaning/office-cleaning-26013440">Office cleaning</a></li>
+          <li><a href="https://checkout.yourgift.cards/76f391c7-7bdd-47bf-b7de-a044f3039be0?platform=Hosted" target="_blank" rel="noopener">Gift certificates</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+17802188529">(780) 218-8529</a></li>
+          <li><a href="mailto:Dsewell@live.com">Dsewell@live.com</a></li>
+          <li>Edmonton, Alberta</li>
+          <li><a href="https://danicacleans.com/merchant-policies">Merchant Policies</a></li>
+          <li><a href="https://danicacleans.com/legal-notice">Legal Notice</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="yr">2026</span> Danica's Cleaning Service. All rights reserved.</span>
+      <span>Design by <a href="https://cleaningdigital.ca/" target="_blank" rel="noopener">Cleaning Digital</a>.</span>
+    </div>
+  </div>
+</footer>
+
+<div class="mbar">
+  <a class="btn btn-ghost" href="tel:+17802188529">Call</a>
+  <a class="btn btn-solid" href="#contact">Send message</a>
+</div>
+
+<script>
+(function(){
+  var b=document.getElementById('burger'), m=document.getElementById('menu');
+  b.addEventListener('click',function(){var o=m.classList.toggle('open'); b.setAttribute('aria-expanded',o)});
+  m.addEventListener('click',function(e){if(e.target.tagName==='A'){m.classList.remove('open'); b.setAttribute('aria-expanded','false')}});
+  document.getElementById('yr').textContent=new Date().getFullYear();
+  var d=new Date().getDay(), t=document.querySelector('.hday[data-d="'+d+'"]'); if(t) t.classList.add('today');
+  var c=document.getElementById('clock');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){c.classList.add('go'); io.disconnect()}})},{threshold:.3});
+    io.observe(c);
+  } else c.classList.add('go');
+  var f=document.getElementById('contactForm'), s=document.getElementById('formStatus');
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    if(!f.request.value.trim()||!f.name.value.trim()||!f.email.value.trim()){s.textContent='Add your request, name and email so I can reply.'; return;}
+    var body='Request: '+f.request.value+'\n\nName: '+f.name.value+'\nEmail: '+f.email.value+'\nPhone: '+f.phone.value;
+    window.location.href='mailto:Dsewell@live.com?subject='+encodeURIComponent('Cleaning request from '+f.name.value)+'&body='+encodeURIComponent(body);
+    s.textContent='Your email app is opening with the message filled in.';
+  });
+})();
+</script>
+</body>
+</html>
